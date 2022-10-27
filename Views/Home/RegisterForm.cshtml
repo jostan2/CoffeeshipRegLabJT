@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form action="Result">
+
+    <p>Username</p>
+    <input type="text" name="Username" pattern="[a-zA-Z0-9]+" minlength="4" maxlength="20"/>
+   <!--pattern is a filter for the types of accepted characters. in this case, it will
+       only accept a-z upper and lowercase, and numbers 0-9. any special characters like !@@#$ are not allowed
+       min/max length is limit on character length.
+   -->
+
+    <p>Password</p>
+    <input type="password" name="Password" min="0" max="200" />
+    
+
+
+    <p>Email</p>
+    <input type="email" name="Email"/>
+           
+   
+
+    <p>Verification</p>
+    <input type="radio" name="status" /> I am Human<br />
+    <input type="radio" name="status" /> I am not Human<br />
+    <input type="radio" name="status" /> I don't want to say <br />
+    <input type="radio" name="status" /> I can't to say <br />
+   
+  
+
+    <input type="submit" />
+
+</form>
