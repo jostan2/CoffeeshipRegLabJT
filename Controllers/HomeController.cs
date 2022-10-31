@@ -1,6 +1,7 @@
 ﻿using CoffeeshipRegLabJT.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace CoffeeshipRegLabJT.Controllers
 {
@@ -35,13 +36,20 @@ namespace CoffeeshipRegLabJT.Controllers
             return View(l);
         }
 
-        public IActionResult ProductList()
+        public IActionResult ProductList(string Name)
         {
             List<Product> products = db.Products.ToList();
             return View(products);
         }
 
-        public IActionResult Product1Details(int Id)
+        public IActionResult ProductDetails(string Name)
+        {
+            List<Product> products = db.Products.ToList();
+            Product selectedProduct = products.Single(x => x.Name == Name);
+            return View(selectedProduct);
+        }
+
+/*        public IActionResult Product1Details(int Id)
         {
             Product product1 = db.Products.Find(Id = 1);
             return View(product1);
@@ -62,8 +70,8 @@ namespace CoffeeshipRegLabJT.Controllers
         public IActionResult Product4Details(int Id)
         {
             Product product4 = db.Products.Find(Id = 4);
-            return View(product4);
-        }
+            return View(product4);*/
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

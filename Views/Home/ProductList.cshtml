@@ -1,11 +1,13 @@
 ﻿@model IEnumerable<Product>
 
-@foreach(Product p in Model){
+@foreach(Product p in Model)
+{
     <div>
-        <p> @p.Id) @p.Name</p>
+
+        <p> @p.Id) <a asp-action="ProductDetails" asp-route-Name="@p.Name" asp-controller="Home">@p.Name</a> </p>
         <p> Price: $ @p.Price</p>
-        <p> -@p.Description</p>
-        <br />
+        <br/>
+
     </div>
 }
 
